@@ -43,36 +43,40 @@ AP1_kelompokRAWON_pinjamalatkampus/
 ├── tsconfig.json          # Konfigurasi utama TypeScript
 ├── tsconfig.node.json     # Konfigurasi TypeScript untuk Node
 └── vite.config.ts         # Konfigurasi bundler Vite
+```
+---
 
-Petunjuk Menjalankan Secara Lokal
+## 🚀 Petunjuk Menjalankan Secara Lokal
 Prasyarat
-1. Node.js v18.0 atau versi yang lebih baru.
-2. npm (terikut saat menginstal Node.js).
+- **Node.js v18.0 atau versi yang lebih baru.**
+- **npm (terikut saat menginstal Node.js).**
 
 Langkah Eksekusi
-1. Kloning Repositori:
+1. **Kloning Repositori:**
 git clone [https://github.com/Andreaslebew/AP1_kelompokRAWON_pinjamalatkampus.git](https://github.com/Andreaslebew/AP1_kelompokRAWON_pinjamalatkampus.git)
 
-2. Masuk ke Direktori Proyek:
+2. **Masuk ke Direktori Proyek:**
 cd AP1_kelompokRAWON_pinjamalatkampus
 
-3. Instal Dependensi:
+3. **Instal Dependensi:**
 npm install
 
-4. Jalankan Server Lokal (Development):
+4. **Jalankan Server Lokal (Development):**
 npm run dev
 
-5. Akses Aplikasi:
+5. **Akses Aplikasi:**
 Buka peramban (browser) dan kunjungi tautan berikut:
 http://localhost:5173
 
-Skrip Tooling (package.json)
+---
+
+## 📜 Skrip Tooling (package.json)
 Di dalam berkas package.json, telah disediakan skrip otomatis untuk membantu pengelolaan kode:
 
-npm run dev : Menjalankan server pengembangan lokal berbasis Vite.
+- npm run dev : Menjalankan server pengembangan lokal berbasis Vite.
 
-npm run build : Memeriksa tipe TypeScript dan mengompilasi aset ke folder dist/ untuk produksi.
+- npm run build : Memeriksa tipe TypeScript dan mengompilasi aset ke folder dist/ untuk produksi.
 
-npm run lint : Memeriksa standar koding dan kualitas kode menggunakan ESLint.
+- npm run lint : Memeriksa standar koding dan kualitas kode menggunakan ESLint.
 
-npm run format : Merapikan format seluruh berkas kode secara otomatis menggunakan Prettier.
+- npm run format : Merapikan format seluruh berkas kode secara otomatis menggunakan Prettier.
