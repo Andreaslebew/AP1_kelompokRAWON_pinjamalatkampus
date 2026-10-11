@@ -1,75 +1,80 @@
-# React + TypeScript + Vite
+# RAWON - Pinjam Alat Kampus (Skeleton SPA)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistem Informasi Peminjaman Barang & Fasilitas Kampus Terintegrasi untuk BAA, BAUK, dan KTI. Proyek ini dikembangkan sebagai bagian dari Tugas Proyek Aplikasi 1 (AP1).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 👥 Anggota Kelompok RAWON
+1. **Andrean Satria Bagaskara** (251-111-012)
+2. **Jovan Ni'am Fairuz Zaky** (251-111-015)
+3. **Devan Aldo Vobiscum** (251-111-016)
+4. **Jeremiah Balin Mulyo** (251-111-004)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack & Dependencies
+- **Framework / Library:** React + TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS + PostCSS + Autoprefixer
+- **Routing:** React Router DOM
+- **Icons:** Lucide React
+- **Code Quality & Tooling:** ESLint, Prettier, EditorConfig
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📂 Struktur Folder Proyek
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+```text
+AP1_kelompokRAWON_pinjamalatkampus/
+├── dist/                  # Hasil build produksi
+├── node_modules/          # Pustaka/dependensi proyek
+├── public/                # Aset statis publik
+├── src/                   # Kode sumber aplikasi
+├── .editorconfig          # Standar konsistensi editor
+├── .eslintrc.cjs          # Konfigurasi linter ESLint
+├── .gitignore             # Berkas yang diabaikan Git
+├── .prettierrc            # Konfigurasi pemformatan Prettier
+├── eslint.config.js       # Konfigurasi ESLint modern
+├── index.html             # Titik masuk HTML utama
+├── package-lock.json      # Catatan versi dependensi npm
+├── package.json           # Konfigurasi proyek & skrip tooling
+├── postcss.config.js      # Konfigurasi PostCSS
+├── README.md              # Dokumentasi proyek
+├── tailwind.config.js     # Konfigurasi Tailwind CSS
+├── tsconfig.app.json      # Konfigurasi TypeScript untuk aplikasi
+├── tsconfig.json          # Konfigurasi utama TypeScript
+├── tsconfig.node.json     # Konfigurasi TypeScript untuk Node
+└── vite.config.ts         # Konfigurasi bundler Vite
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Petunjuk Menjalankan Secara Lokal
+Prasyarat
+1. Node.js v18.0 atau versi yang lebih baru.
+2. npm (terikut saat menginstal Node.js).
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Langkah Eksekusi
+1. Kloning Repositori:
+git clone [https://github.com/Andreaslebew/AP1_kelompokRAWON_pinjamalatkampus.git](https://github.com/Andreaslebew/AP1_kelompokRAWON_pinjamalatkampus.git)
 
-```
+2. Masuk ke Direktori Proyek:
+cd AP1_kelompokRAWON_pinjamalatkampus
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+3. Instal Dependensi:
+npm install
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+4. Jalankan Server Lokal (Development):
+npm run dev
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+5. Akses Aplikasi:
+Buka peramban (browser) dan kunjungi tautan berikut:
+http://localhost:5173
 
-```
+Skrip Tooling (package.json)
+Di dalam berkas package.json, telah disediakan skrip otomatis untuk membantu pengelolaan kode:
+
+npm run dev : Menjalankan server pengembangan lokal berbasis Vite.
+
+npm run build : Memeriksa tipe TypeScript dan mengompilasi aset ke folder dist/ untuk produksi.
+
+npm run lint : Memeriksa standar koding dan kualitas kode menggunakan ESLint.
+
+npm run format : Merapikan format seluruh berkas kode secara otomatis menggunakan Prettier.
