@@ -8,8 +8,6 @@ Sistem Informasi Peminjaman Barang & Fasilitas Kampus Terintegrasi untuk BAA, BA
 1. **Andrean Satria Bagaskara** (251-111-012)
 2. **Jovan Ni'am Fairuz Zaky** (251-111-015)
 3. **Devan Aldo Vobiscum** (251-111-016)
-4. **Jeremiah Balin Mulyo** (251-111-004)
-
 ---
 
 ## 🛠️ Tech Stack & Dependencies
