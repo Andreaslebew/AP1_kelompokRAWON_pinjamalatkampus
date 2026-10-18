@@ -1,8 +1,51 @@
 @import "tailwindcss";
 
-body {
-  margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  background-color: #f8fafc;
-  color: #1e293b;
+@theme {
+  --font-sans: "Inter", Arial, system-ui, sans-serif;
+
+  /* Peran warna (StyleGuide P3 §1) */
+  --color-primary: #4f46e5;
+  --color-primary-hover: #4338ca;
+  --color-primary-active: #3730a3;
+  --color-primary-tint: #eef0ff;
+  --color-info: #2563eb;
+  --color-info-tint: #eaf1ff;
+  --color-success: #15803d;
+  --color-success-tint: #e8f7ee;
+  --color-warning: #b45309;
+  --color-warning-tint: #fff3e0;
+  --color-danger: #dc2626;
+  --color-danger-tint: #fdecec;
+
+  /* Skala abu-abu netral */
+  --color-gray-50: #f8f8fb;
+  --color-gray-100: #efeff4;
+  --color-gray-200: #e2e3ea;
+  --color-gray-300: #cdcfd8;
+  --color-gray-400: #9a9dab;
+  --color-gray-500: #6b6f7e;
+  --color-gray-600: #4b4e5c;
+  --color-gray-700: #363846;
+  --color-gray-800: #22232e;
+  --color-gray-900: #111118;
+
+  /* Type scale (StyleGuide P3 §2), ukuran / line-height dalam px */
+  --text-h1: 32px;        --text-h1--line-height: 40px;
+  --text-h2: 28px;        --text-h2--line-height: 36px;
+  --text-h3: 24px;        --text-h3--line-height: 32px;
+  --text-h4: 20px;        --text-h4--line-height: 28px;
+  --text-h5: 16px;        --text-h5--line-height: 24px;
+  --text-h6: 14px;        --text-h6--line-height: 20px;
+  --text-body: 14px;      --text-body--line-height: 20px;
+  --text-caption: 12px;   --text-caption--line-height: 16px;
+}
+
+@layer base {
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background-color: var(--color-gray-100);
+    color: var(--color-gray-800);
+    -webkit-font-smoothing: antialiased;
+  }
 }

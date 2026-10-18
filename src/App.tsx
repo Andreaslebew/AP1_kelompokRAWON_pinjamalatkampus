@@ -1,26 +1,54 @@
-import React from 'react';
+import { lazy, Suspense, type FC } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { HeaderNav } from './components/HeaderNav';
+import { AppLayout } from './components/layout/AppLayout';
+import { AppDataProvider } from './store/AppDataProvider';
 
-import { BerandaMhs } from './pages/mahasiswa/BerandaMhs';
-import { KatalogMhs } from './pages/mahasiswa/KatalogMhs';
-import { DetailFasilitasMhs } from './pages/mahasiswa/DetailFasilitasMhs';
-import { PeminjamanMhs } from './pages/mahasiswa/PeminjamanMhs';
-import { RiwayatMhs } from './pages/mahasiswa/RiwayatMhs';
+const BerandaMhs = lazy(() =>
+  import('./pages/mahasiswa/BerandaMhs').then((m) => ({ default: m.BerandaMhs })),
+);
+const KatalogMhs = lazy(() =>
+  import('./pages/mahasiswa/KatalogMhs').then((m) => ({ default: m.KatalogMhs })),
+);
+const DetailFasilitasMhs = lazy(() =>
+  import('./pages/mahasiswa/DetailFasilitasMhs').then((m) => ({ default: m.DetailFasilitasMhs })),
+);
+const PeminjamanMhs = lazy(() =>
+  import('./pages/mahasiswa/PeminjamanMhs').then((m) => ({ default: m.PeminjamanMhs })),
+);
+const RiwayatMhs = lazy(() =>
+  import('./pages/mahasiswa/RiwayatMhs').then((m) => ({ default: m.RiwayatMhs })),
+);
 
-import { DashboardStaf } from './pages/staf/DashboardStaf';
-import { UnitStaf } from './pages/staf/UnitStaf';
-import { PermintaanStaf } from './pages/staf/PermintaanStaf';
-import { PengembalianStaf } from './pages/staf/PengembalianStaf';
-import { BarangStaf } from './pages/staf/BarangStaf';
+const DashboardStaf = lazy(() =>
+  import('./pages/staf/DashboardStaf').then((m) => ({ default: m.DashboardStaf })),
+);
+const UnitStaf = lazy(() =>
+  import('./pages/staf/UnitStaf').then((m) => ({ default: m.UnitStaf })),
+);
+const PermintaanStaf = lazy(() =>
+  import('./pages/staf/PermintaanStaf').then((m) => ({ default: m.PermintaanStaf })),
+);
+const PengembalianStaf = lazy(() =>
+  import('./pages/staf/PengembalianStaf').then((m) => ({ default: m.PengembalianStaf })),
+);
+const BarangStaf = lazy(() =>
+  import('./pages/staf/BarangStaf').then((m) => ({ default: m.BarangStaf })),
+);
 
-import { NotFound } from './pages/NotFound';
+const NotFound = lazy(() =>
+  import('./pages/NotFound').then((m) => ({ default: m.NotFound })),
+);
 
-export const App: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-[#f8fafc] text-[#1e293b]">
-      <HeaderNav />
-      <main>
+const PageFallback: FC = () => (
+  <p role="status" className="px-4 py-6 text-body text-gray-500">
+    Memuat halaman…
+  </p>
+);
+
+export const App: FC = () => (
+  <AppDataProvider>
+    <AppLayout>
+      <Suspense fallback={<PageFallback />}>
         <Routes>
           <Route path="/" element={<Navigate to="/mahasiswa/beranda" replace />} />
 
@@ -38,9 +66,9 @@ export const App: React.FC = () => {
 
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </main>
-    </div>
-  );
-};
+      </Suspense>
+    </AppLayout>
+  </AppDataProvider>
+);
 
 export default App;

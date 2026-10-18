@@ -1,11 +1,18 @@
-import React from 'react';
+import type { FC } from 'react';
 import { Link } from 'react-router-dom';
-export const NotFound: React.FC = () => (
-    <div className="min-h-[70vh] flex items-center justify-center p-6">
-        <div className="text-center max-w-md bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
-            <h2 className="text-2xl font-bold text-slate-800 mb-2">404 - Halaman Tidak Ditemukan</h2>
-            <p className="text-slate-600 text-sm mb-6">Maaf, rute halaman yang Anda cari tidak ada.</p>
-            <Link to="/" className="inline-block bg-[#4F46E5] text-white px-6 py-2.5 rounded-lg font-semibold">Kembali</Link>
-        </div>
+import { Card } from '../components/Card/Card';
+
+export const NotFound: FC = () => (
+    <div className="flex min-h-[70vh] items-center justify-center px-4">
+        <Card className="flex w-full max-w-sm flex-col items-center gap-3 p-6 text-center">
+        <h1 className="text-h4 font-bold">404 - Halaman Tidak Ditemukan</h1>
+        <p className="text-body text-gray-500">Rute yang Anda cari tidak tersedia.</p>
+        <Link
+            to="/"
+            className="mt-2 inline-flex h-12 items-center rounded-lg border border-primary bg-primary px-6 font-semibold text-white hover:bg-primary-hover"
+        >
+            Kembali ke beranda
+        </Link>
+        </Card>
     </div>
 );
